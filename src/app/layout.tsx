@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quickSand.variable} ${exo.variable} ${itimRegular.variable} ${josefinSans.variable} ${amaranthRegular.variable} ${amaranthBold.variable} antialiased container mx-auto py-8`}
+        className={`${quickSand.variable} ${exo.variable} ${itimRegular.variable} ${josefinSans.variable} ${amaranthRegular.variable} ${amaranthBold.variable} antialiased container mx-auto py-8 xl:px-0 px-5`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LenisScrollProvider>

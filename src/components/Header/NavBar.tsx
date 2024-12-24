@@ -1,17 +1,51 @@
 "use client";
 import React, { useState } from "react";
-import { LetterPullup } from "../ui/Letter-PulUp";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/Nav-Menu";
+import { LetterPullup } from "@/components/ui/Letter-PulUp";
+import {
+  HoveredLink,
+  Menu,
+  MenuItem,
+  ProductItem,
+} from "@/components/ui/Nav-Menu";
 import { cn } from "@/lib/utils";
-import { ModeToggle } from "../Mode-Toggle";
+import { ModeToggle } from "@/components/Mode-Toggle";
+import { Button } from "../ui/button";
 
 const NavBar = () => {
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<boolean>(false);
+
   return (
-    <nav className="relative flex justify-between items-center py-4 px-8">
+    <nav className="relative flex justify-between items-center py-4  lg:px-8">
       <LetterPullup words={"Nikoliare"} delay={0.05} />
       <NavBarMenu className="bg-transparent " />
-      <ModeToggle />
+      <div className="flex items-center space-x-3">
+        <ModeToggle />
+        <Button
+          onClick={() => setActive(!active)}
+          variant={"outline"}
+          size={"icon"}
+          className="md:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6  "
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d={`${
+                active
+                  ? "M6 18 18 6M6 6l12 12"
+                  : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              }`}
+            />
+          </svg>
+        </Button>
+      </div>
     </nav>
   );
 };
@@ -21,7 +55,12 @@ export default NavBar;
 function NavBarMenu({ className }: { className: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div className={cn("fixed  inset-x-0 max-w-2xl mx-auto z-50", className)}>
+    <div
+      className={cn(
+        "md:fixed md:inline-block  hidden  inset-x-0 max-w-2xl mx-auto z-50",
+        className
+      )}
+    >
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">

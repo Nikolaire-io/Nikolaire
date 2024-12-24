@@ -8,7 +8,6 @@ import gsap from "gsap";
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const isDarkMode = theme === "dark";
-
   const svgRef = React.useRef(null);
   const centerCircleRef = React.useRef(null);
   const maskedCircleRef = React.useRef(null);
@@ -89,7 +88,6 @@ export function ModeToggle() {
       width={24}
       height={24}
       viewBox="0 0 24 24"
-      color={isDarkMode ? "white" : "black"}
       fill="none"
       strokeWidth="2"
       strokeLinecap="round"
@@ -97,6 +95,7 @@ export function ModeToggle() {
       stroke="currentColor"
       onClick={toggleDarkMode}
       style={{ cursor: "pointer" }}
+      className="dark:stroke-white stroke-black "
     >
       <mask id="theme-toggle-mask">
         <rect x="0" y="0" width="100%" height="100%" fill="white" />
@@ -107,7 +106,7 @@ export function ModeToggle() {
         ref={centerCircleRef}
         cx="12"
         cy="12"
-        fill={isDarkMode ? "white" : "black"}
+        className="dark:fill-white fill-black"
         mask="url(#theme-toggle-mask)"
       />
 
