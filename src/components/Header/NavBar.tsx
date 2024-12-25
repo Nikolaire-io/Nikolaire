@@ -13,20 +13,9 @@ import { Button } from "../ui/button";
 
 const NavBar = () => {
   const [active, setActive] = useState<boolean>(false);
-  const [isFloating, setIsFloating] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setIsFloating(true);
-    } else {
-      setIsFloating(false);
-    }
-  };
+
   return (
-    <nav className="fixed inset-x-0 max-w-screen-2xl mx-auto z-50 flex justify-between items-center py-4 px-3 backdrop-blur-xl bg-transparent  border-b border-border rounded-2xl  lg:px-8">
+    <nav className="fixed inset-x-0 max-w-screen-2xl mx-auto z-50 flex justify-between items-center py-4 px-3 backdrop-blur-xl bg-transparent  border-b border-border rounded-2xl  lg:px-8 h-[76px]">
       <LetterPullup words={"Nikoliare"} delay={0.05} />
       <NavBarMenu className="bg-transparent " />
       <div className="flex items-center space-x-3">
