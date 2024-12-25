@@ -84,9 +84,17 @@ export default {
   		},
   		animation: {
   			'shiny-text': 'shiny-text 8s infinite',
-  			orbit: 'orbit calc(var(--duration)*1s) linear infinite'
+  			orbit: 'orbit calc(var(--duration)*1s) linear infinite',
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+  			meteor: 'meteor 5s linear infinite',
+  			gradient: 'gradient 8s linear infinite'
   		},
   		keyframes: {
+  			gradient: {
+  				to: {
+  					backgroundPosition: 'var(--bg-size) 0'
+  				}
+  			},
   			'shiny-text': {
   				'0%, 90%, 100%': {
   					'background-position': 'calc(-100% - var(--shiny-width)) 0'
@@ -101,6 +109,24 @@ export default {
   				},
   				'100%': {
   					transform: 'rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)'
+  				}
+  			},
+  			'border-beam': {
+  				'100%': {
+  					'offset-distance': '100%'
+  				}
+  			},
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(215deg) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(215deg) translateX(-500px)',
+  					opacity: '0'
   				}
   			}
   		}
