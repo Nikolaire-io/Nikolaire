@@ -99,7 +99,7 @@ const Hero = () => {
     );
   }, []);
   return (
-    <section className="  flex flex-wrap  lg:justify-between justify-center items-center overflow-hidden  gap-2  w-full h-full lg:h-screen lg:mt-0 mt-10">
+    <section className="  flex flex-wrap  lg:justify-between justify-center items-center overflow-hidden  gap-2  w-full h-full lg:h-screen lg:mt-0 mt-10 px-5">
       <div className="space-y-5  lg:w-[45%] w-full  ">
         {/* Shiny Text */}
 

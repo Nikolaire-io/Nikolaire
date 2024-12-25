@@ -37,7 +37,7 @@ const WhoWeArePage = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex h-[300px] max-w-7xl mx-auto flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+      className="relative flex h-[300px] max-w-7xl mx-4 px-2 xl:mx-auto flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
     >
       <p className="text-sm uppercase tracking-wider text-gray-500 mb-6 font-exo text-start">
         WHO WE ARE
