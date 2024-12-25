@@ -9,9 +9,11 @@ import Particles from "../ui/particles";
 import { useTheme } from "next-themes";
 import OrbitingCircles from "../ui/orbiting-circles";
 import Image from "next/image";
+import TechStack from "./Tech-stack";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const blurRef = useRef<HTMLDivElement>(null);
   const words = ["Web Apps", "Sass", "Big Things"];
   const { resolvedTheme } = useTheme();
   const [color, setColor] = useState("#ffffff");
@@ -79,10 +81,26 @@ const Hero = () => {
       elements.forEach((el) => el.remove());
     };
   }, []);
+  useGSAP(() => {
+    gsap.fromTo(
+      ".blur-effect",
+      {
+        opacity: 0,
 
+        filter: "blur(10px)",
+      },
+      {
+        opacity: 1,
+
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+  }, []);
   return (
-    <section className="mt-16 flex flex-wrap  lg:justify-between justify-center items-center overflow-hidden gap-2  ">
-      <div className="space-y-5 lg:w-[45%] w-full  ">
+    <section className="lg:mt-0 md:mt-28 mt-20  flex flex-wrap  lg:justify-between justify-center items-center overflow-hidden  gap-2  w-full h-full lg:h-screen">
+      <div className="space-y-5  lg:w-[45%] w-full  ">
         {/* Shiny Text */}
 
         <div className="group rounded-full w-56 lg:mx-0 mx-auto border-border bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200  dark:bg-neutral-900 dark:hover:bg-neutral-800">
@@ -94,12 +112,15 @@ const Hero = () => {
         {/* Title */}
 
         <div className="flex flex-col place-items-center lg:place-items-start gap-2.5  md:gap-5 ">
-          <span className=" lg:text-7xl text-5xl  font-semibold font-josefin-sans  ">
+          <span className=" lg:text-7xl text-5xl  font-semibold font-josefin-sans blur-effect ">
             Build Your
           </span>
 
           <div className="flex flex-col lg:flex-row gap-1 lg:gap-3 items-center">
-            <span className="lg:text-7xl text-5xl font-semibold font-josefin-sans">
+            <span
+              ref={blurRef}
+              className="lg:text-7xl text-5xl font-semibold font-josefin-sans blur-effect"
+            >
               Dream
             </span>
 
@@ -107,19 +128,18 @@ const Hero = () => {
 
             <div
               ref={containerRef}
-              className="relative md:w-44 w-80 lg:text-start text-center h-16   overflow-hidden  "
+              className="relative md:w-44 w-80 lg:text-start text-center h-16   overflow-hidden  blur-effect"
               // style={{ lineHeight: "60px", verticalAlign: "bottom" }}
             />
           </div>
 
-          <span className="lg:text-4xl font-semibold  font-josefin-sans">
+          <span className="lg:text-4xl font-semibold  font-josefin-sans blur-effect">
             With Us 🫂
           </span>
         </div>
       </div>
 
-      <div className="relative flex h-[450px] w-full lg:w-[45%]      flex-col items-center justify-center   overflow-hidden rounded-lg  bg-background md:shadow-xl">
-        {/* Inner Circles */}
+      {/* <div className="relative flex h-[450px] w-full lg:w-[45%]      flex-col items-center justify-center   overflow-hidden rounded-lg  bg-background ">
         <OrbitingCircles
           className="md:size-[40px] lg:size-[50px] size-[30px] border-none bg-transparent"
           duration={20}
@@ -137,7 +157,6 @@ const Hero = () => {
           <Icons.postgres />
         </OrbitingCircles>
 
-        {/* Outer Circles (reverse) */}
         <OrbitingCircles
           className="md:size-[40px] lg:size-[50px] size-[30px] border-none bg-transparent"
           radius={190}
@@ -174,7 +193,8 @@ const Hero = () => {
         >
           <Icons.supabase />
         </OrbitingCircles>
-      </div>
+      </div> */}
+      <TechStack />
 
       {/* Particles background */}
 
