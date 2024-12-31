@@ -77,7 +77,11 @@ const NavBar = () => {
 
   return (
     <nav className="fixed inset-x-0 max-w-screen-2xl mx-auto z-50 flex justify-between items-center py-4 px-3 backdrop-blur-xl bg-transparent  border-b border-border rounded-2xl  lg:px-8 h-[76px]">
-      <LetterPullup words={"Nikoliare"} delay={0.05} />
+      <Link
+        href={"/"}
+        children={<LetterPullup words={"Nikoliare"} delay={0.05} />}
+      />
+
       <NavBarMenu className="bg-transparent " />
       <div className="flex items-center space-x-3">
         <ModeToggle />
@@ -147,7 +151,7 @@ function NavBarMenu({ className }: { className: string }) {
             </HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
+        {/* <MenuItem setActive={setActive} active={active} item="Products">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Algochurn"
@@ -174,7 +178,7 @@ function NavBarMenu({ className }: { className: string }) {
               description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
             />
           </div>
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
