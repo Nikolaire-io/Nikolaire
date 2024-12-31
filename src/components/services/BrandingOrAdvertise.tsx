@@ -86,7 +86,7 @@ const BrandingOrAdvertise = () => {
 
         {/* second display */}
         
-        <div className="group third mx-auto flex lg:h-[calc(100vh-100px)] lg:p-5 lg:pl-0 p-1 dark:bg-[#09090B]  bg-white overflow-x-auto gap-6 justify-around flex-shrink-0 w-full">
+        <div className="third mx-auto flex lg:h-[calc(100vh-100px)] lg:p-5 lg:pl-0 p-1 dark:bg-[#09090B]  bg-white overflow-x-auto gap-6 justify-around flex-shrink-0 w-full">
           {/* third item */}
           <div  className="flex group  flex-col justify-center h-full">
             <img

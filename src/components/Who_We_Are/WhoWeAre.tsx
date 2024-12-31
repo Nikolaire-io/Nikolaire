@@ -3,9 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
-import { BorderBeam } from "../ui/border-beam";
-import Meteors from "../ui/meteors";
-import AnimatedGradientText from "../ui/animated-gradient-text";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
