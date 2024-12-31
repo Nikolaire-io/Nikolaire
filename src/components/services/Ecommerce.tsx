@@ -1,8 +1,28 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import React from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Ecommerce = () => {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(()=>{
+    gsap.to("#first-display .first", {
+      x: "-99%",
+      scrollTrigger: {
+        trigger: ".trigger-first",
+        scroller: "body",
+        start: "top 10%",
+        end: "top -100%",
+        scrub: 3,
+        pin: true
+      }
+    })
+  })
+
   return (
-    <div className="flex items-center justify-center gap-4 flex-col lg:flex-row">
+    <div className="flex trigger-first items-center justify-center gap-4 flex-col lg:flex-row w-full overflow-x-hidden">
       <div className="w-full lg:h-[calc(100vh-100px)] max-w-md mx-auto bg-white dark:bg-[#09090B] lg:p-8   lg:border-r my-6 border-gray-300 relative ">
         <div className="flex justify-between text-sm font-medium text-black">
           <span>01</span>
@@ -30,11 +50,30 @@ const Ecommerce = () => {
       </div>
 
       {/* second section */}
-      <div className="flex items-center justify-between overflow-x-scroll lg:overflow-auto">
-        <div className=" group mx-auto lg:h-[calc(100vh-100px)] lg:p-7 p-1 dark:bg-[#09090B]  bg-white overflow-x-auto">
-          <div className="flex flex-col justify-center h-full">
+      <div id="first-display" className="flex items-center justify-between overflow-x-hidden lg:overflow-x-hidden">
+
+        {/* first display */}
+        <div className=" mx-auto first flex lg:h-[calc(100vh-100px)] lg:p-5 p-1 dark:bg-[#09090B]  bg-white overflow-x-hidden overflow-hidden gap-6 justify-around flex-shrink-0 w-full">
+          {/* first item */}
+          <div  className="flex group  flex-col justify-center h-full">
             <img
-              src="https://static.vecteezy.com/system/resources/previews/012/335/181/non_2x/mobile-shopping-concept-a-man-and-a-woman-buy-things-in-the-online-store-through-a-big-smartphone-e-commerce-and-online-shopping-illustration-in-flat-style-vector.jpg"
+              src="https://cdn.sanity.io/images/8nn8fua5/production/15e3db1ad0572de3c093faf5d2470fa7572b7e37-580x725.png?w=1024&fm=webp&q=65"
+              className="lg:w-full lg:h-[560px] h-72 w-60 object-cover group-hover:scale-95 scale-100 transition-all duration-300"
+            />
+            <div className="lg:p-6 p-1">
+              <h2 className="lg:text-xl text-lg  text-[#252422] dark:text-[#bababa] font-bold mb-2">
+                Innova
+              </h2>
+              <p className=" text-sm">
+                VeraTech.COM — DESIGNING AN ELEVATED ONLINE
+                EXPERIENCE FOR A ONE-OF-A-KIND PRODUCT.
+              </p>
+            </div>
+          </div>
+          {/* second item */}
+          <div className="flex group  flex-col justify-center h-full">
+            <img
+              src="https://cdn.sanity.io/images/8nn8fua5/production/15e3db1ad0572de3c093faf5d2470fa7572b7e37-580x725.png?w=1024&fm=webp&q=65"
               className="lg:w-full lg:h-[560px] h-72 w-60 object-cover group-hover:scale-95 scale-100 transition-all duration-300"
             />
             <div className="lg:p-6 p-1">
@@ -49,16 +88,34 @@ const Ecommerce = () => {
           </div>
         </div>
 
-        {/* Third section */}
-        <div className="   group mx-auto lg:h-[calc(100vh-100px)] lg:p-7 p-1 dark:bg-[#09090B]  bg-white overflow-x-auto">
-          <div className="flex flex-col justify-center h-full">
+        {/* second display */}
+        
+        <div className=" first mx-auto flex lg:h-[calc(100vh-100px)] lg:p-5 lg:pl-0 p-1 dark:bg-[#09090B]  bg-white overflow-x-auto gap-6 justify-around flex-shrink-0 w-full">
+          {/* third item */}
+          <div  className="flex group  flex-col justify-center h-full">
             <img
-              src="https://static.vecteezy.com/system/resources/previews/012/335/181/non_2x/mobile-shopping-concept-a-man-and-a-woman-buy-things-in-the-online-store-through-a-big-smartphone-e-commerce-and-online-shopping-illustration-in-flat-style-vector.jpg"
-              className="lg:w-full lg:h-[560px] h-[300px] w-[240px] object-cover group-hover:scale-95 scale-100 transition-all duration-300"
+              src="https://cdn.sanity.io/images/8nn8fua5/production/15e3db1ad0572de3c093faf5d2470fa7572b7e37-580x725.png?w=1024&fm=webp&q=65"
+              className="lg:w-full lg:h-[560px] h-72 w-60 object-cover group-hover:scale-95 scale-100 transition-all duration-300"
             />
             <div className="lg:p-6 p-1">
-              <h2 className="text-xl text-[#252422] dark:text-[#bababa] font-bold mb-2">
-                VeraTech
+              <h2 className="lg:text-xl text-lg  text-[#252422] dark:text-[#bababa] font-bold mb-2">
+                Innova
+              </h2>
+              <p className=" text-sm">
+                VeraTech.COM — DESIGNING AN ELEVATED ONLINE
+                EXPERIENCE FOR A ONE-OF-A-KIND PRODUCT.
+              </p>
+            </div>
+          </div>
+          {/* fourth item */}
+          <div className="flex group  flex-col justify-center h-full">
+            <img
+              src="https://cdn.sanity.io/images/8nn8fua5/production/15e3db1ad0572de3c093faf5d2470fa7572b7e37-580x725.png?w=1024&fm=webp&q=65"
+              className="lg:w-full lg:h-[560px] h-72 w-60 object-cover group-hover:scale-95 scale-100 transition-all duration-300"
+            />
+            <div className="lg:p-6 p-1">
+              <h2 className="lg:text-xl text-lg  text-[#252422] dark:text-[#bababa] font-bold mb-2">
+                Innova
               </h2>
               <p className=" text-sm">
                 VeraTech.COM — DESIGNING AN ELEVATED ONLINE
@@ -67,7 +124,9 @@ const Ecommerce = () => {
             </div>
           </div>
         </div>
+
       </div>
+      
     </div>
   );
 };

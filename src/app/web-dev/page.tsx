@@ -1,15 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import "@/app/web-dev/button.css";
 import Ecommerce from "@/components/services/Ecommerce";
-import WebAndPlatform from "@/components/services/WebAndPlatform";
 import BrandingOrAdvertise from "@/components/services/BrandingOrAdvertise";
+import WebAndPlatform from "@/components/services/WebAndPlatform";
 import Seo from "@/components/services/Seo";
 
 const Services = () => {
+
+
   return (
     <div>
-      <h1 className="uppercase mt-20 xl:text-8xl md:text-4xl text-3xl font-semibold mb-20 md:w-4/5 text-[#252422] dark:text-[#bababa]">
+      <h1 className="uppercase pt-32 xl:text-8xl md:text-4xl text-3xl font-semibold pb-20 md:w-4/5 text-[#252422] dark:text-[#bababa]">
         Simple to comprehend.
         <br />● Unforgettable to overlook.
       </h1>
@@ -30,7 +32,7 @@ const Services = () => {
       <div className="w-full h-[1px] bg-[#252422] dark:bg-[#bababa]"></div>
 
       {/* services section */}
-      <div>
+      <div className="w-full">
         <Ecommerce></Ecommerce>
         <div className="w-full h-[1px] bg-[#252422] dark:bg-[#bababa]"></div>
         <WebAndPlatform></WebAndPlatform>
