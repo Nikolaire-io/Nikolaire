@@ -77,7 +77,10 @@ const NavBar = () => {
 
   return (
     <nav className="fixed inset-x-0 max-w-screen-2xl mx-auto z-50 flex justify-between items-center py-4 px-3 backdrop-blur-xl bg-transparent  border-b border-border rounded-2xl  lg:px-8 h-[76px]">
-      <Link href={"/"} children={<LetterPullup words={"Nikoliare"} delay={0.05} />}/>
+      <Link
+        href={"/"}
+        children={<LetterPullup words={"Nikolaire"} delay={0.05} />}
+      />
       <NavBarMenu className="bg-transparent " />
       <div className="flex items-center space-x-3">
         <ModeToggle />
