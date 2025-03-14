@@ -191,7 +191,6 @@
 //   );
 // }
 
-
 "use client";
 import { useRef, useState } from "react";
 import { LetterPullup } from "@/components/ui/Letter-PulUp";
@@ -296,7 +295,7 @@ const NavBar = () => {
     {
       label: "Pricing",
       links: [
-        { label: "Hobby", href: "/hobby" },
+        { label: "Hobby", href: "/pricing" },
         { label: "Individual", href: "/individual" },
         { label: "Team", href: "/team" },
         { label: "Enterprise", href: "/enterprise" },
@@ -311,7 +310,7 @@ const NavBar = () => {
     >
       <Link
         href={"/"}
-        children={<LetterPullup words={"Nikoliare"} delay={0.05} />}
+        children={<LetterPullup words={"Nikolaire"} delay={0.05} />}
       />
       <NavBarMenu className="bg-transparent" />
       <div className="flex items-center space-x-3">
@@ -383,10 +382,10 @@ function NavBarMenu({ className }: { className: string }) {
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="#pricing">Hobby</HoveredLink>
+            <HoveredLink href="#pricing">Individual</HoveredLink>
+            <HoveredLink href="#pricing">Team</HoveredLink>
+            <HoveredLink href="#pricing">Enterprise</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
